@@ -4,7 +4,8 @@
   "description": "easy and simple to get date and time",
   "main": "src/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "npx babel src/index.js --out-file dist/index.js"
   },
   "keywords": [
     "date",
@@ -17,5 +18,10 @@
   ],
   "author": "Serhii Mykhailenko",
   "repository": "https://github.com/MikhSerhii/simple-time-date.git",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/cli": "^7.21.5",
+    "@babel/core": "^7.22.1",
+    "@babel/plugin-transform-modules-commonjs": "^7.21.5"
+  }
 }
