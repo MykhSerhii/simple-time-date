@@ -84,10 +84,8 @@ export class DateTime {
     }
 
     create(timeString, format) {
-        let time
-        try {
-            time = new Date(timeString)
-        } catch {
+        const time = new Date(timeString)
+        if (isString(time)) {
             console.error(`Invalid time string: ${timeString}`)
             return ''
         }
