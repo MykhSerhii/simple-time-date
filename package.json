@@ -1,6 +1,6 @@
 {
   "name": "simple-time-date",
-  "version": "0.3.3",
+  "version": "0.3.4",
   "description": "easy and simple to get date and time",
   "main": "dist/index.js",
   "scripts": {
