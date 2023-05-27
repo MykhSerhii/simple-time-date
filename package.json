@@ -17,7 +17,7 @@
     "timeDate"
   ],
   "author": "Serhii Mykhailenko",
-  "repository": "https://github.com/MikhSerhii/simple-time-date.git",
+  "repository": "https://github.com/MykhSerhii/simple-time-date.git",
   "license": "ISC",
   "devDependencies": {
     "@babel/cli": "^7.21.5",
