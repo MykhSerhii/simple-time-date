@@ -85,8 +85,8 @@ export class DateTime {
 
     create(timeString, format) {
         const time = new Date(timeString)
-        if (isString(time)) {
-            console.error(`Invalid time string: ${timeString}`)
+        if (time.toUTCString() === 'Invalid Date') {
+            console.error(`Error! Invalid time string: ${timeString}`)
             return ''
         }
         return setFormat(setZone(time, this.#zone),format ?? this.#format)
