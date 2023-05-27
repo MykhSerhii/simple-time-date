@@ -73,7 +73,8 @@ export class DateTime {
     #format
     #zone
 
-    constructor(format, zone) {
+    constructor(options) {
+        const {format, zone} = options
         this.#format = format ?? DEFAULT_FORMAT
         this.#zone = zone ?? ''
     }
