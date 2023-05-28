@@ -10,7 +10,7 @@ npm install simple-time-date
 
 ## Example
 
-### *setZone(time, zone)*
+### setZone(time, zone)
 ##### Options:
 - time - `Date` object
 - zone - `string`, UTC time zone
@@ -39,7 +39,7 @@ npm install simple-time-date
     ```
 ---
 
-### *setFormat(time, format)*
+### setFormat(time, format)
 
 #### Options:
 - time - `Date` object
