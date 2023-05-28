@@ -1,12 +1,12 @@
 # simple-time-date
-easy and simple to get date and time
+easy and simple to get date and time\
+<br/>
 
----
 ## Instailation
 ```bash
 npm install simple-time-date
 ```
----
+<br/>
 
 ## Example
 
