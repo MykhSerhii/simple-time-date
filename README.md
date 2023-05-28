@@ -13,7 +13,7 @@ npm install simple-time-date
 ### *setZone(time, zone)*
 ##### Options:
 - time - `Date` object
-- zone - `string`, UTC time zone.
+- zone - `string`, UTC time zone
 #### Code
 1. ESM
     ```js
@@ -24,7 +24,7 @@ npm install simple-time-date
     console.log(time)                      // 2023-05-28T18:27:37.802Z (+0)
    
     const newTime = setZone(time, '+3')    // or +3, +03, -2, -02
-    console.log(newTime)   
+    console.log(newTime)                   // 2023-05-28T21:27:37.802Z (+3)
     ```
 2. CommonJS
     ```js
@@ -35,7 +35,7 @@ npm install simple-time-date
     console.log(time)                      // 2023-05-28T18:27:37.802Z (+0)
    
     const newTime = setZone(time, '+3')    // or +3, +03, -2, -02
-    console.log(newTime)                   // 2023-05-28T21:27:37.802Z (+0)
+    console.log(newTime)                   // 2023-05-28T21:27:37.802Z (+3)
     ```
 ---
 
@@ -93,8 +93,8 @@ Object has methods:
 - `now(format)` - returns the time elapsed since the epoch, which is defined as the midnight at the beginning of January 1, 1970, UTC.\
 Used saved format and zone.\
 Options: 
-  - format - `string`, time format (not required)\
-
+  - format - `string`, time format (not required)
+  
 
 - `create(timeString, format)` - returns the time.\
 Used saved format and zone.\
@@ -107,32 +107,44 @@ Options:
     import {DateTime} from 'simple-time-date'
     
     
-    const time1 = new DateTime()
-    console.log(time1.now())                                // 2023.05.28 19:21:26
-    console.log(time1.create('2023-05-28 19:15'))           // 2023.05.28 16:15:00
+    const time = new Date()
+    console.log(time)                                       // 2023-05-28T19:41:46.792Z
     
-    const time2 = new DateTime({format: 'Y-M-D H:m:s.S'})
-    console.log(time2.now())                                // 2023-05-28 19:21:26.218
-    console.log(time2.create('2023-05-28 19:15'))           // 2023-05-28 16:15:00.000
+    const time1 = new Date('2023-05-28 19:15')
+    console.log(time1)                                      // 2023-05-28T16:15:00.000Z
     
-    const time3 = new DateTime({zone: '-5', format: 'D.M.Y H:m:s'})
-    console.log(time3.now())                                // 28.05.2023 14:21:26
-    console.log(time3.create('2023-05-28 19:15'))           // 28.05.2023 11:15:00
+    const time2 = new DateTime()
+    console.log(time2.now())                                // 2023.05.28 19:41:46
+    console.log(time2.create('2023-05-28 19:15'))           // 2023.05.28 16:15:00
+    
+    const time3 = new DateTime({format: 'Y-M-D H:m:s.S'})
+    console.log(time3.now())                                // 2023-05-28 19:41:46.799
+    console.log(time3.create('2023-05-28 19:15'))           // 2023-05-28 16:15:00.000
+    
+    const time4 = new DateTime({zone: '-5', format: 'D.M.Y H:m:s'})
+    console.log(time4.now())                                // 28.05.2023 14:41:46
+    console.log(time4.create('2023-05-28 19:15'))           // 28.05.2023 11:15:00
     ```
 2. CommonJS
     ```js
     const {DateTime} = require('simple-time-date')
-
-
-    const time1 = new DateTime()
-    console.log(time1.now())                                // 2023.05.28 19:21:26
-    console.log(time1.create('2023-05-28 19:15'))           // 2023.05.28 16:15:00
     
-    const time2 = new DateTime({format: 'Y-M-D H:m:s.S'})
-    console.log(time2.now())                                // 2023-05-28 19:21:26.218
-    console.log(time2.create('2023-05-28 19:15'))           // 2023-05-28 16:15:00.000
     
-    const time3 = new DateTime({zone: '-5', format: 'D.M.Y H:m:s'})
-    console.log(time3.now())                                // 28.05.2023 14:21:26
-    console.log(time3.create('2023-05-28 19:15'))           // 28.05.2023 11:15:00
+    const time = new Date()
+    console.log(time)                                       // 2023-05-28T19:41:46.792Z
+    
+    const time1 = new Date('2023-05-28 19:15')
+    console.log(time1)                                      // 2023-05-28T16:15:00.000Z
+    
+    const time2 = new DateTime()
+    console.log(time2.now())                                // 2023.05.28 19:41:46
+    console.log(time2.create('2023-05-28 19:15'))           // 2023.05.28 16:15:00
+    
+    const time3 = new DateTime({format: 'Y-M-D H:m:s.S'})
+    console.log(time3.now())                                // 2023-05-28 19:41:46.799
+    console.log(time3.create('2023-05-28 19:15'))           // 2023-05-28 16:15:00.000
+    
+    const time4 = new DateTime({zone: '-5', format: 'D.M.Y H:m:s'})
+    console.log(time4.now())                                // 28.05.2023 14:41:46
+    console.log(time4.create('2023-05-28 19:15'))           // 28.05.2023 11:15:00
     ```
